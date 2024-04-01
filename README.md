@@ -1,4 +1,4 @@
-# AWS EC2 Keypair
+# AWS Opentofu EC2 Keypair
 ![squareops_avatar]
 
 [squareops_avatar]: https://squareops.com/wp-content/uploads/2022/12/squareops-logo.png
@@ -6,19 +6,19 @@
 ### [SquareOps Technologies](https://squareops.com/) Your DevOps Partner for Accelerating cloud journey.
 <br>
 
-This module is a reusable Terraform module that simplifies the creation and management of an EC2 key pair on AWS. This module creates an EC2 key pair and securely stores the private key in the AWS Systems Manager Parameter Store (SSM). The module also returns the key pair name and the SSM parameter ARN for later use in other resources, making it easy to reference the key pair in other parts of your infrastructure. Using this module can help you save time and effort in managing your key pairs while ensuring security and compliance in your AWS environment.
+This module is a reusable Opentofu module that simplifies the creation and management of an EC2 key pair on AWS. This module creates an EC2 key pair and securely stores the private key in the AWS Systems Manager Parameter Store (SSM). The module also returns the key pair name and the SSM parameter ARN for later use in other resources, making it easy to reference the key pair in other parts of your infrastructure. Using this module can help you save time and effort in managing your key pairs while ensuring security and compliance in your AWS environment.
 
 ## Usage Example
 
 ```hcl
 module "key_pair" {
-  source = "squareops/keypair/aws"
+  source = "git@github.com:atmosly/opentofu-aws-keypair.git"
   key_name           = "example-key"
   environment        = "production"
   ssm_parameter_path = "production-example-key"
 }
 ```
-Refer [this](https://github.com/squareops/terraform-aws-keypair/tree/main/examples) for more examples.
+Refer [this](https://github.com/atmosly/opentofu-aws-keypair/tree/main/examples/complete) for more examples.
 
 
 ## Retrieve Private Key
@@ -34,7 +34,7 @@ aws ssm get-parameter --name "<ssm_parameter_path>" --region "<region>" --with-d
 ```
 
 ## IAM Permission
-The required IAM permissions to create resources from this module can be found [here](https://github.com/squareops/terraform-aws-keypair/blob/main/IAM.md)
+The required IAM permissions to create resources from this module can be found [here](https://github.com/atmosly/opentofu-aws-keypair/blob/main/IAM.md)
 
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
@@ -84,7 +84,7 @@ The required IAM permissions to create resources from this module can be found [
 
 To report an issue with a project:
 
-  1. Check the repository's [issue tracker](https://github.com/squareops/terraform-aws-keypair/issues) on GitHub
+  1. Check the repository's [issue tracker](https://github.com/atmosly/opentofu-aws-keypair/issues) on GitHub
   2. Search to see if the issue has already been reported
   3. If you can't find an answer to your question in the documentation or issue tracker, you can ask a question by creating a new issue. Make sure to provide enough context and details .
 
@@ -96,7 +96,7 @@ Apache License, Version 2.0, January 2004 (http://www.apache.org/licenses/).
 
 To support a GitHub project by liking it, you can follow these steps:
 
-  1. Visit the repository: Navigate to the [GitHub repository](https://github.com/squareops/terraform-aws-keypair)
+  1. Visit the repository: Navigate to the [GitHub repository](git@github.com:atmosly/opentofu-aws-keypair.git)
 
   2. Click the "Star" button: On the repository page, you'll see a "Star" button in the upper right corner. Clicking on it will star the repository, indicating your support for the project.
 

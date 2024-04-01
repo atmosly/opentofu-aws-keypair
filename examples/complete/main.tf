@@ -10,7 +10,7 @@ locals {
 }
 
 module "key_pair" {
-  source             = "squareops/keypair/aws"
+  source             = "git@github.com:atmosly/opentofu-aws-keypair.git"
   key_name           = format("%s-%s-kp", local.environment, local.name)
   environment        = local.environment
   ssm_parameter_path = format("%s-%s-ssm", local.environment, local.name) #SSM parameter secret name
